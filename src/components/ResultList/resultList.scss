@@ -1,7 +1,14 @@
 .resultList {
+    padding-left: 0;
     li {
         text-align: left;
         list-style: none;
-        padding: 5px;
+        padding: 10px 0;
+        border-bottom: 1px solid white;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        justify-content: space-between;
     }
 }
