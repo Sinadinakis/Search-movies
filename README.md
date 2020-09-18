@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Search movies with axios 
+
+The Open Movie Database: Poster API provided by http://www.omdbapi.com/
+
 ## Available Scripts
 
 In the project directory, you can run:
