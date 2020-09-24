@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
+// CSS
+import './LikeButton.scss'
+
 const LikeButton = () => {
   const [clicks, setClicks] = useState(0);
   const [totalClicks, setTotalClicks] = useState(0);
@@ -20,14 +23,14 @@ const LikeButton = () => {
     return () => clearTimeout(singleClickTimer);
   }, [clicks]);
 
+  // Single Click
   const handleClick = () => {
-    console.log('single click');
     total = totalClicks + 1;
     setTotalClicks(total);
   }
 
+  // Double Click
   const handleDoubleClick = () => {
-    console.log('double click');
     if (total > 0) {
       total = totalClicks - 1;
     }

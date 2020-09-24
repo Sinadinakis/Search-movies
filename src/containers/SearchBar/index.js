@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { debounce } from 'lodash';
 
-// CSS
-import './searchBar.scss';
-
 // Components
 import { fetchData } from '../../services/fetchData';
-import ResultList from '../ResultList';
+import ResultList from '../../components/Search/ResultList';
+import SearchInput from '../../components/Search/SearchInput';
 
 const SearchBar = () => {
     const [query, setQuery] = useState('');
@@ -14,7 +12,7 @@ const SearchBar = () => {
     const [dataList, setDataList] = useState([]);
     const [errorMsg, setErrorMsg] = useState('');
 
-    const onChange = ({ target: { value } }) => {
+    const searchHandler = ({ target: { value } }) => {
         setQuery(value);
 
         const search = debounce(fetchQuery, 300);
@@ -50,22 +48,9 @@ const SearchBar = () => {
 
     return (
         <>
-            <div>
-                <p>Search Input</p>
-                <input
-                    type="text"
-                    className="SearchBar"
-                    title="Movies"
-                    value={query}
-                    placeholder="Enter Movie title"
-                    onChange={onChange}
-                />
-            </div>
-
-            <div>
-                <ResultList movies={dataList} />
-                {errorMsg}
-            </div>
+            <SearchInput query={query} searchHandler={searchHandler} /> 
+            <ResultList movies={dataList} />
+            {errorMsg}
         </>
     );
 }

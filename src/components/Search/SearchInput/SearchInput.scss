@@ -1,4 +1,4 @@
-input {
+.search-input {
   display: block;
   margin: auto;
   width: 50%;
@@ -16,6 +16,18 @@ input {
   transition: all 250ms ease-in-out;
   backface-visibility: hidden;
   transform-style: preserve-3d;
+  margin-top: 40px;
+
+  &::placeholder {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  &_title {
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+  } 
 
   &:hover,
   &:focus {
@@ -28,18 +40,4 @@ input {
     background-position: 100% center;
     color:white;
   }
-}
-
-.SearchInput {
-  margin-top: 40px;
-  &::placeholder {
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-  }
-
-  &_title {
-    font-size: 22px;
-    font-weight: 900;
-    text-align: center;
-  } 
 }
