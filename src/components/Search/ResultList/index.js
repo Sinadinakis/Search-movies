@@ -15,7 +15,7 @@ const ResultList = ({ movies }) => {
                         key={item.imdbID}
                         imageUrl={item.Poster}
                         title={item.Title}
-                        type={item.Type}
+                        year={item.Year}
                     />
                 ))}
             </ul>
